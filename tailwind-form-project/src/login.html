@@ -86,6 +86,28 @@
         </a>
     </p>
 </div>
+
+    <script>
+// Script untuk toggle dark mode
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+// Cek preferensi dark mode dari localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+
+// Event listener untuk toggle dark mode
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+
+// Simpan preferensi ke localStorage
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', null);
+            }
+        });
+    </script>
 </form>
 </div>
 
